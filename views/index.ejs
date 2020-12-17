@@ -1,0 +1,27 @@
+<%- include('partials/head.ejs') %>
+<body>
+    
+    <%- include('partials/header.ejs') %>
+
+    <main>
+        <div class="container">
+            <% if(true){ %>
+                <hr>
+                <div class="container-faca-uma-pergunta">
+                    <h1 class="texto-faca-uma-pergunta">Nenhuma pergunta foi feita. Seja o primeiro!</h1>
+                    <a class="link-faca-uma-pergunta" href="/perguntar">Perguntar</a>
+                </div>
+                <hr>
+            <% } else { %>
+                <hr>
+                <div class="container-faca-uma-pergunta">
+                    <h1 class="texto-faca-uma-pergunta">Faca uma pergunta!</h1>
+                    <a class="link-faca-uma-pergunta" href="/perguntar">Perguntar</a>
+                </div>
+                <hr>
+            <% } %>
+        </div>
+    </main>
+
+</body>
+</html>

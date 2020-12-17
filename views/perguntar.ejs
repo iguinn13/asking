@@ -1,0 +1,23 @@
+<%- include('partials/head.ejs') %>
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+    <main>
+        <div class="container">
+            <hr>
+            <h1 class="texto-pergunte">Pergunte</h1>
+            <hr>
+
+            <form class="formulario-pergunta" action="" method="POST">
+                <label for="titulo">Titulo</label>
+                <input type="text" name="titulo" required>
+                <label for="descricao">Descricao</label>
+                <textarea rows="10" name="descricao" required></textarea>
+                <button type="submit">Perguntar</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
