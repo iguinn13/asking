@@ -15,17 +15,18 @@
             <% } else { %>
                 <hr>
                 <div class="container-faca-uma-pergunta">
-                    <h1 class="texto-faca-uma-pergunta">Faca uma pergunta!</h1>
+                    <h1 class="texto-faca-uma-pergunta">Faça uma pergunta!</h1>
                     <a class="link-faca-uma-pergunta" href="/perguntar">Perguntar</a>
                 </div>
                 <hr>
 
                 <% perguntas.forEach(pergunta => { %>
                     <div class="pergunta">
-                        <h2><a class="pergunta-link" href="/pergunta/<%= pergunta.id %>"><%= pergunta.titulo %></a></h2>
+                        <h2><a class="pergunta-link" href="/pergunta/<%= pergunta.id %>"><%= pergunta.titulo %></a></h2>  
+                        <span class="numero-respostas"></span>
                     </div>
                     <hr>
-                <% }) %>            
+                <% }) %>          
             <% } %>
         </div>
     </main>

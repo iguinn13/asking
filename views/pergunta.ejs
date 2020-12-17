@@ -13,14 +13,20 @@
             <hr>
             <div>
                 <form class="formulario-resposta" action="/salvarResposta" method="POST">
-                    <label for="resposta">Responda</label>
-                    <textarea name="resposta" rows="10"></textarea>
+                    <input type="hidden" name="perguntaId" value="<%= pergunta.id %>">
+                    <label for="conteudo">Responda</label>
+                    <textarea name="conteudo" rows="10" required></textarea>
                     <button type="submit">Responder</button>
                 </form>
             </div>
-            <div class="container-respostas">
-                <p>fasfopksfopkasfop</p>
-            </div>
+
+            <% respostas.forEach(resposta => { %>
+                <div class="container-resposta">
+                    <p><%= resposta.conteudo %></p>
+                    <hr>
+                    <span class="data-resposta"><%= resposta.createdAt %></span>
+                </div>          
+            <% }) %>
         </div>
     </main>
 

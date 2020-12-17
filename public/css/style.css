@@ -129,6 +129,7 @@ body {
 .formulario-resposta button {
     padding: 10px 0;
     margin-top: 10px;
+    margin-bottom: 20px;
     font-size: 1.025em;
     border-radius: 5px;
     background-color: black;
@@ -138,4 +139,18 @@ body {
 
 .formulario-resposta button:hover {
     background-color: rgb(26, 26, 26);
+}
+
+.container-resposta {
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.container-resposta p {
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+.data-resposta {
+    padding: 10px;
 }

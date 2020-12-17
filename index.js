@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./database/database');
 const Pergunta = require('./database/Pergunta');
+const Resposta = require('./database/Resposta');
 
 connection.authenticate().then(() => {
     console.log('Conexao com o banco de dados realizada com sucesso!');
@@ -51,14 +52,33 @@ app.get('/pergunta/:id', (req, res) => {
             id: id
         }
     }).then(pergunta => {
-        if(pergunta != undefined){
-            res.render('pergunta', {
-                pergunta: pergunta
-            });
+        if(pergunta != undefined){          
+            Resposta.findAll({
+                where:{perguntaId: pergunta.id},
+                order:[['createdAt', 'desc']]
+            }).then(respostas => {
+                res.render('pergunta', {
+                    pergunta: pergunta,
+                    respostas: respostas,
+                });
+            })
         } else {
             res.redirect('/');
         }
     })
+});
+
+app.post('/salvarResposta', (req, res) => {
+    var conteudo = req.body.conteudo;
+    var perguntaId = req.body.perguntaId;
+
+    Resposta.create({
+        conteudo: conteudo,
+        perguntaId: perguntaId
+    }).then(() => {
+        res.redirect('/pergunta/' + perguntaId);
+    });
+
 });
 
 app.listen(8080, () => {
