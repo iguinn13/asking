@@ -5,7 +5,7 @@
 
     <main>
         <div class="container">
-            <% if(true){ %>
+            <% if(perguntas == null || perguntas == undefined){ %>
                 <hr>
                 <div class="container-faca-uma-pergunta">
                     <h1 class="texto-faca-uma-pergunta">Nenhuma pergunta foi feita. Seja o primeiro!</h1>
@@ -19,6 +19,13 @@
                     <a class="link-faca-uma-pergunta" href="/perguntar">Perguntar</a>
                 </div>
                 <hr>
+
+                <% perguntas.forEach(pergunta => { %>
+                    <div class="pergunta">
+                        <h2><a class="pergunta-link" href="/pergunta/:<%= pergunta.id %>"><%= pergunta.titulo %></a></h2>
+                    </div>
+                    <hr>
+                <% }) %>            
             <% } %>
         </div>
     </main>
