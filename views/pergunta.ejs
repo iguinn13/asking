@@ -1,0 +1,28 @@
+<%- include('partials/head.ejs') %>
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+    <main>
+        <div class="container">
+            <div class="container-pergunta">
+                <h1><%= pergunta.titulo %></h1>
+                <hr>
+                <p><%= pergunta.descricao %></p>
+            </div>
+            <hr>
+            <div>
+                <form class="formulario-resposta" action="/salvarResposta" method="POST">
+                    <label for="resposta">Responda</label>
+                    <textarea name="resposta" rows="10"></textarea>
+                    <button type="submit">Responder</button>
+                </form>
+            </div>
+            <div class="container-respostas">
+                <p>fasfopksfopkasfop</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

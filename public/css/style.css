@@ -94,3 +94,48 @@ body {
 .formulario-pergunta button:hover {
     background-color: rgb(26, 26, 26);
 }
+
+/* Pagina pergunta */
+.container-pergunta {
+    margin-top: 20px;
+}
+
+.container-pergunta h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.container-pergunta p {
+    font-size: 1.5em;
+    padding: 10px 0;
+}
+
+.formulario-resposta {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.formulario-resposta label {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.formulario-resposta textarea {
+    padding: 10px;
+    font-size: 1.4em;
+}
+
+.formulario-resposta button {
+    padding: 10px 0;
+    margin-top: 10px;
+    font-size: 1.025em;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.formulario-resposta button:hover {
+    background-color: rgb(26, 26, 26);
+}
